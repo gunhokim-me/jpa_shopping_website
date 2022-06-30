@@ -18,7 +18,7 @@ spring:
         format_sql: true
     hibernate:
       ddl-auto: create
-    database-platform: org.hibernate.dialect.MYSQL8Dialect
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
 
 #쿼리에 물음표로 출력되는 바인드 파라미터 출력
 logging:
@@ -27,4 +27,4 @@ logging:
       hibernate:
         type:
           descriptor:
-            sql: true
+            sql: trace
