@@ -37,7 +37,8 @@ public class MemberControllerTest {
         memberFormDto.setName("홍길동");
         memberFormDto.setAddress("서울시 마포구 합정동");
         memberFormDto.setPassword(password);
-        Member member = Member.createMember(memberFormDto,passwordEncoder);
+
+        Member member = Member.createMember(memberFormDto, passwordEncoder);
         return memberService.saveMember(member);
     }
 
@@ -50,7 +51,8 @@ public class MemberControllerTest {
 
         mockMvc.perform(formLogin().userParameter("email")
                 .loginProcessingUrl("/members/login")
-                .user(email).password(password))
+                        .user(email)
+                        .password(password))
                 .andExpect(SecurityMockMvcResultMatchers.authenticated());
     }
 
@@ -63,7 +65,8 @@ public class MemberControllerTest {
 
         mockMvc.perform(formLogin().userParameter("email")
                         .loginProcessingUrl("/members/login")
-                        .user(email).password("12345"))
+                        .user(email)
+                        .password("12345"))
                 .andExpect(SecurityMockMvcResultMatchers.unauthenticated());
     }
 }
