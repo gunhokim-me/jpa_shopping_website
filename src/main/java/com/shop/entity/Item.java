@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @ToString
-public class Item {
+public class Item extends BaseEntity{
 
     //상품 코드
     @Id
@@ -43,8 +43,8 @@ public class Item {
     private ItemSellStatus itemSellStatus;
 
     //등록 시간
-    private LocalDateTime regTime;
+    //private LocalDateTime regTime;
 
     //수정시간
-    private LocalDateTime updateTime;
+    //private LocalDateTime updateTime;
 }
