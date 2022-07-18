@@ -10,3 +10,5 @@ spring:
 #  #H2 데이터베이스 방언 설정
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create
